@@ -1,0 +1,63 @@
+.header-logo-img {
+  width: auto;
+  height: 80px;
+  padding: 0;
+}
+
+.header-nav {
+  margin-top: 1rem;
+  margin: 0;
+  background: none;
+  position: fixed;
+  width: 100vw;
+  padding: 0 1rem;
+  z-index: 1;
+}
+
+.nav-search {
+  gap: 1rem;
+}
+
+.nav-searchbar {
+  color: var(--ghost-color);
+  background: rgba(0, 0, 0, 0);
+  /* border: 1px solid rgba(255, 255, 255, 0.76); */
+  width: 15rem;
+}
+
+.header-nav-links > nav > ul {
+  padding-right: 3rem;
+}
+
+.header-link {
+  color: var(--base-gray-color);
+  text-transform: uppercase;
+}
+
+.header-link:hover {
+  color: var(--ghost-color);
+}
+
+.header-link-active {
+  text-decoration: none;
+  color: var(--ghost-color);
+}
+
+.header-account-link:hover {
+  cursor: pointer;
+  color: var(--ghost-color);
+}
+
+.dropDown {
+  display: flex;
+  flex-direction: column;
+  width: 4.5rem;
+  position: fixed;
+  top: 3.5rem;
+  right: 1.9rem;
+  z-index: 2;
+  font-size: 1.7rem;
+  letter-spacing: 1.2px;
+  text-align: center;
+  font-family: Jurassic Park;
+}
