@@ -1,0 +1,6 @@
+.sidebar {
+  position: sticky;
+  top: 5rem;
+  align-self: flex-start;
+  height: auto;
+}
