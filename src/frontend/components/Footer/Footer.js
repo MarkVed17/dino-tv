@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTheme } from "../../contexts";
 import "./Footer.css";
 
 function Footer() {
+  const { theme } = useTheme();
+
   return (
     <>
       <footer className="footer-container">
@@ -11,7 +14,11 @@ function Footer() {
           <Link to="/">
             <img
               className="footer-logo-img"
-              src="/assets/Logo/dino-tv-logo.svg"
+              src={
+                theme === "dark"
+                  ? "/assets/Logo/dino-tv-logo-dark.svg"
+                  : "/assets/Logo/dino-tv-logo-light.svg"
+              }
               alt="dino-tv-logo"
             />
           </Link>

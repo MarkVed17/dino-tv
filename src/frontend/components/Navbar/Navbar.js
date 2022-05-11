@@ -1,29 +1,43 @@
 import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import { useSidebar, useTheme } from "../../contexts";
 import "./Navbar.css";
 
-function Navbar() {
+const Navbar = () => {
   const [dropDownMenu, setDropDownMenu] = useState(false);
 
-  const location = useLocation();
+  const { pathname } = useLocation();
+
+  const forbiddenPaths = ["/", "/signin", "/signup"];
+
+  const { setShowSidebar } = useSidebar();
+
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <>
       <header className="header-nav nav-search nav-menu">
-        {location.pathname !== "/" && (
-          <button class="btn nav-menu-btn">
-            <span class="material-icons nav-menu-icon"> menu </span>
+        {!forbiddenPaths.includes(pathname) && (
+          <button
+            className="btn nav-menu-btn"
+            onClick={() => setShowSidebar((showSidebar) => !showSidebar)}
+          >
+            <span className="material-icons nav-menu-icon"> menu </span>
           </button>
         )}
         <NavLink to="/" className="header-logo-link">
           <img
             className="header-logo-img"
-            src="/assets/Logo/dino-tv-logo.svg"
+            src={
+              theme === "dark"
+                ? "/assets/Logo/dino-tv-logo-dark.svg"
+                : "/assets/Logo/dino-tv-logo-light.svg"
+            }
             alt="dino-tv-logo"
           />
         </NavLink>
 
-        {location.pathname !== "/" && (
+        {!forbiddenPaths.includes(pathname) && (
           <div className="std-search">
             <input
               type="text"
@@ -39,6 +53,17 @@ function Navbar() {
         <div className="header-nav-links">
           <nav>
             <ul>
+              <li className="header-account-link" onClick={toggleTheme}>
+                {theme === "dark" ? (
+                  <span class="material-icons" title="Switch to Light Mode">
+                    light_mode
+                  </span>
+                ) : (
+                  <span class="material-icons" title="Switch to Dark Mode">
+                    dark_mode
+                  </span>
+                )}
+              </li>
               <li>
                 <span
                   className="header-account-link"
@@ -76,6 +101,6 @@ function Navbar() {
       )}
     </>
   );
-}
+};
 
 export { Navbar };

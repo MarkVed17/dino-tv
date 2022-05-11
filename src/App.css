@@ -12,6 +12,29 @@
   min-height: 100vh;
 }
 
+.light-mode {
+  --font-color: #101212;
+  --ghost-color: #000000;
+  --body-bg-color: #ffffff;
+  --comp-container-color: #ebebeb;
+  --input-outline-color: #b5b5b5;
+}
+
+.dark-mode {
+  --font-color: #cccccc;
+  --ghost-color: #ffffff;
+  --body-bg-color: #101212;
+  --comp-container-color: #1d1d1d;
+  --input-outline-color: #222222;
+}
+
 .main-content {
+  display: flex;
+  flex-grow: 1;
+}
+
+.app-content {
+  display: flex;
+  margin-top: 5rem;
   flex-grow: 1;
 }
