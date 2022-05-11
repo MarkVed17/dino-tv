@@ -9,7 +9,6 @@
   background-color: var(--body-bg-color);
   position: fixed;
   top: 0;
-  /* width: 100vw; */
   width: 100%;
   padding: 0 1rem;
 }
