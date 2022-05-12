@@ -1,0 +1,88 @@
+.login-form {
+  width: 30%;
+  margin: 4rem auto 0 auto;
+}
+
+.login-heading {
+  text-align: left;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.login-subheading {
+  margin-top: 0;
+  color: var(--base-gray-color);
+  padding-left: 0.15rem;
+}
+
+.login-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 5rem;
+}
+
+.login-form > .login-input-container > label {
+  width: fit-content;
+  color: var(--font-color);
+  font-size: 1.2rem;
+}
+
+.input {
+  background-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.login-form-link {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.login-form-link > label {
+  color: var(--font-color);
+}
+
+.login-form-link > a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.visibility-icon {
+  width: fit-content;
+  margin: auto;
+}
+
+.visibility-icon:hover {
+  cursor: pointer;
+}
+
+.btn-login {
+  color: var(--body-bg-color);
+  font-size: 1.5rem;
+  text-transform: none;
+}
+
+.login-form > .login-input-container > .btn-ghost {
+  text-transform: none;
+  color: var(--font-color);
+}
+
+.guest-link {
+  color: var(--base-gray-color);
+  margin: auto;
+  padding-top: 0.5rem;
+  width: fit-content;
+}
+
+.guest-link:hover {
+  cursor: pointer;
+}
+
+.signup-link {
+  text-decoration: none;
+  color: var(--font-color);
+  width: fit-content;
+  padding: 1rem;
+  margin: auto;
+}
