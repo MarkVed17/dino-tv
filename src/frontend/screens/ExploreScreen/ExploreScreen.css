@@ -1,0 +1,25 @@
+.explore-screen-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.filters-container {
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  padding: 0.5rem;
+  margin-left: 1.5rem;
+  display: flex;
+  gap: 2rem;
+  background-color: var(--body-bg-color);
+  border-top: 1px solid var(--input-outline-color);
+  border-bottom: 1px solid var(--input-outline-color);
+}
+
+.explore-videos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 2rem 1.5rem;
+  margin: 4rem 1rem;
+}
