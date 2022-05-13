@@ -19,7 +19,7 @@ const ExploreScreen = () => {
       <div className="explore-screen-content">
         <div className="filters-container">
           {filterCategories.map((category) => (
-            <FilterChip filterCategory={category} />
+            <FilterChip key={category} filterCategory={category} />
           ))}
         </div>
         <div className="explore-videos-container">
