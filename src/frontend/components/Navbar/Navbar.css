@@ -9,6 +9,7 @@
   background-color: var(--body-bg-color);
   position: fixed;
   top: 0;
+  z-index: 3;
   width: 100%;
   padding: 0 1rem;
 }
@@ -69,7 +70,7 @@
   top: 3.5rem;
   right: 1.9rem;
   right: 0.87rem;
-  z-index: 2;
+  z-index: 4;
   font-size: 1.7rem;
   letter-spacing: 1.2px;
   text-align: center;
