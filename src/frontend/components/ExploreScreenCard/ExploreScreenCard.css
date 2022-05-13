@@ -3,7 +3,7 @@
   width: 23%;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 8px;
   cursor: pointer;
 }
 
@@ -21,7 +21,7 @@
 
 .explore-video-card-primary {
   display: flex;
-  gap: 0.5rem;
+  gap: 8px;
   align-items: center;
 }
 
@@ -57,7 +57,7 @@
 
 .explore-video-card-secondary {
   display: flex;
-  gap: 0.5rem;
+  gap: 8px;
   color: var(--base-gray-color);
   align-items: center;
 }

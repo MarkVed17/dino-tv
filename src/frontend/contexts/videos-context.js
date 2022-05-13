@@ -11,7 +11,6 @@ const VideosProvider = ({ children }) => {
       const response = await getVideosService();
       if (response !== undefined) {
         setVideos(response);
-        console.log(response);
       }
     })();
   }, []);
