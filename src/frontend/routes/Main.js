@@ -10,7 +10,9 @@ import {
   HistoryScreen,
   SignInScreen,
   SignUpScreen,
+  SingleVideoScreen,
 } from "../screens";
+import Mockman from "mockman-js";
 import { PrivateRoute } from "../components";
 import { useAuth } from "../contexts";
 
@@ -20,6 +22,7 @@ const Main = () => {
   return (
     <Routes>
       <Route path="/" element={<HomeScreen />} />
+      <Route path="/explore/:videoId" element={<SingleVideoScreen />} />
       <Route
         path="/explore"
         element={
@@ -74,6 +77,7 @@ const Main = () => {
           <Route path="/signup" element={<SignUpScreen />} />
         </>
       )}
+      <Route path="/mockman" element={<Mockman />} />
       <Route path="*" element={<Navigate replace to="/" />} />
     </Routes>
   );
