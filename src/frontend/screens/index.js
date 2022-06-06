@@ -7,3 +7,4 @@ export { PlaylistScreen } from "./PlaylistScreen/PlaylistScreen";
 export { HistoryScreen } from "./HistoryScreen/HistoryScreen";
 export { SignInScreen } from "./SignInScreen/SignInScreen";
 export { SignUpScreen } from "./SignUpScreen/SignUpScreen";
+export { SingleVideoScreen } from "./SingleVideoScreen/SingleVideoScreen";
