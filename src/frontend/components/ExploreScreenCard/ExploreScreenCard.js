@@ -23,7 +23,10 @@ const ExploreScreenCard = ({ video }) => {
         <p className="explore-video-card-title">{title}</p>
         <span
           className="material-icons explore-video-card-primary-menu"
-          onClick={() => setKebabMenu((kebabMenu) => !kebabMenu)}
+          onClick={(e) => {
+            e.stopPropagation();
+            setKebabMenu((kebabMenu) => !kebabMenu);
+          }}
         >
           more_vert
         </span>
