@@ -2,18 +2,22 @@ import React, { useState } from "react";
 import Moment from "react-moment";
 import { nFormatter } from "../../utils/nFormatter";
 import { useNavigate } from "react-router-dom";
-import { useWatchLaterVideos } from "../../contexts";
+import { useWatchLaterVideos, useHistory } from "../../contexts";
 import "./WatchLaterVideoCard.css";
 
 const WatchLaterVideoCard = ({ video }) => {
   const [kebabMenu, setKebabMenu] = useState(false);
-  const { removeFromWatchLaterHandler } = useWatchLaterVideos();
   const navigate = useNavigate();
+  const { removeFromWatchLaterHandler } = useWatchLaterVideos();
+  const { addToHistoryHandler } = useHistory();
 
   return (
     <div
       className="watch-later-video-card"
-      onClick={() => navigate(`/explore/${video._id}`)}
+      onClick={() => {
+        addToHistoryHandler(video);
+        navigate(`/explore/${video._id}`);
+      }}
       key={video._id}
     >
       <img

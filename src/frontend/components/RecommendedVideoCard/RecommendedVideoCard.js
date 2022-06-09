@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Moment from "react-moment";
 import { nFormatter } from "../../utils/nFormatter";
 import { useNavigate } from "react-router-dom";
-import { useAuth, useWatchLaterVideos } from "../../contexts";
+import { useAuth, useWatchLaterVideos, useHistory } from "../../contexts";
 import "./RecommendedVideoCard.css";
 
 const RecommendedVideoCard = ({ video }) => {
@@ -10,11 +10,15 @@ const RecommendedVideoCard = ({ video }) => {
   const navigate = useNavigate();
   const { auth } = useAuth();
   const { watchLaterVideos, addToWatchLaterHandler } = useWatchLaterVideos();
-  
+  const { addToHistoryHandler } = useHistory();
+
   return (
     <div
       className="recommended-video-card"
-      onClick={() => navigate(`/explore/${video._id}`)}
+      onClick={() => {
+        addToHistoryHandler(video);
+        navigate(`/explore/${video._id}`);
+      }}
       key={video._id}
     >
       <img
