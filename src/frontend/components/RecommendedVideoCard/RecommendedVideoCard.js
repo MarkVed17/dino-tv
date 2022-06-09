@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import Moment from "react-moment";
 import { nFormatter } from "../../utils/nFormatter";
 import { useNavigate } from "react-router-dom";
+import { useAuth, useWatchLaterVideos } from "../../contexts";
 import "./RecommendedVideoCard.css";
 
 const RecommendedVideoCard = ({ video }) => {
   const [kebabMenu, setKebabMenu] = useState(false);
   const navigate = useNavigate();
-
+  const { auth } = useAuth();
+  const { watchLaterVideos, addToWatchLaterHandler } = useWatchLaterVideos();
+  
   return (
     <div
       className="recommended-video-card"
@@ -45,10 +48,31 @@ const RecommendedVideoCard = ({ video }) => {
       </span>
       {kebabMenu && (
         <div className="recommended-video-card-kebab-menu">
-          <span>
-            <span className="material-icons">watch_later</span> Save to Watch
-            later
-          </span>
+          {watchLaterVideos.find(
+            (watchLaterVideo) => watchLaterVideo._id === video._id
+          ) ? (
+            <span
+              onClick={(e) => {
+                e.stopPropagation();
+                auth.status ? navigate("/watchlater") : navigate("/signin");
+              }}
+            >
+              <span className="material-icons">watch_later</span> Go to Watch
+              later
+            </span>
+          ) : (
+            <span
+              onClick={(e) => {
+                e.stopPropagation();
+                auth.status
+                  ? addToWatchLaterHandler(video)
+                  : navigate("/signin");
+              }}
+            >
+              <span className="material-icons">watch_later</span> Save to Watch
+              later
+            </span>
+          )}
           <span>
             <span className="material-icons">playlist_play</span> Save to
             playlist
