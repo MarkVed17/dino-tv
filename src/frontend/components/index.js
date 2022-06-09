@@ -12,3 +12,4 @@ export { RecommendedVideosList } from "./RecommendedVideosList/RecommendedVideos
 export { RecommendedVideoCard } from "./RecommendedVideoCard/RecommendedVideoCard";
 export { LikedVideoCard } from "./LikedVideoCard/LikedVideoCard";
 export { WatchLaterVideoCard } from "./WatchLaterVideoCard/WatchLaterVideoCard";
+export { HistoryVideoCard } from "./HistoryVideoCard/HistoryVideoCard";
