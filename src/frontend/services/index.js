@@ -8,3 +8,7 @@ export { removeFromLikedVideos } from "./like-video-services/removeFromLikedVide
 export { getWatchLaterVideos } from "./watchlater-video-services/getWatchLaterVideos";
 export { addToWatchLaterVideos } from "./watchlater-video-services/addToWatchLaterVideos";
 export { removeFromWatchLaterVideos } from "./watchlater-video-services/removeFromWatchLaterVideos";
+export { getHistoryService } from "./history-services/getHistoryService";
+export { addToHistory } from "./history-services/addToHistory";
+export { removeFromHistory } from "./history-services/removeFromHistory";
+export { clearHistory } from "./history-services/clearHistory";
