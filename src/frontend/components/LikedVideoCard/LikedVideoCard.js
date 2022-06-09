@@ -74,10 +74,6 @@ const LikedVideoCard = ({ video }) => {
               later
             </span>
           )}
-          {/* <span>
-            <span className="material-icons">watch_later</span> Save to Watch
-            later
-          </span> */}
           <span>
             <span className="material-icons">playlist_play</span> Save to
             playlist
