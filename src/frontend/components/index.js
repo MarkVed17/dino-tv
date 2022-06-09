@@ -9,3 +9,6 @@ export { FilterChip } from "./FilterChip/FilterChip";
 export { VideoPlayer } from "./VideoPlayer/VideoPlayer";
 export { SingleVideoDetails } from "./SingleVideoDetails/SingleVideoDetails";
 export { RecommendedVideosList } from "./RecommendedVideosList/RecommendedVideosList";
+export { RecommendedVideoCard } from "./RecommendedVideoCard/RecommendedVideoCard";
+export { LikedVideoCard } from "./LikedVideoCard/LikedVideoCard";
+export { WatchLaterVideoCard } from "./WatchLaterVideoCard/WatchLaterVideoCard";

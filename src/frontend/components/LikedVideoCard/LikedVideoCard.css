@@ -1,21 +1,29 @@
-.explore-video-card {
+.liked-video-card {
   position: relative;
-  width: 23%;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   cursor: pointer;
-}
-
-.explore-video-card:hover {
-  background-color: var(--card-hover-color);
-}
-
-.explore-video-card-thumbnail {
   width: 100%;
 }
 
-.explore-video-card-title {
+.liked-video-card:hover {
+  background-color: var(--card-hover-color);
+}
+
+.liked-video-card-thumbnail {
+  width: 25%;
+  height: 100%;
+}
+
+.liked-video-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--font-color);
+  width: 100%;
+}
+
+.liked-video-card-title {
   color: var(--font-color);
   font-weight: 600;
   font-size: 1.1rem;
@@ -23,26 +31,27 @@
   line-clamp: 2;
 }
 
-.explore-video-card-primary {
+.liked-video-card-primary {
   display: flex;
-  gap: 8px;
   align-items: center;
-  padding: 0 8px;
+  gap: 8px;
 }
 
-.explore-video-card-primary-menu {
+.liked-video-card-primary-menu {
   border-radius: 50%;
   font-size: 1.75rem;
+  height: fit-content;
 }
 
-.explore-video-card-primary-menu:hover {
+.liked-video-card-primary-menu:hover {
   background-color: var(--icon-hover-color);
+  cursor: pointer;
 }
 
-.explore-video-card-kebab-menu {
+.liked-video-card-kebab-menu {
   position: absolute;
-  left: 5rem;
-  top: 13rem;
+  left: 33rem;
+  top: 2rem;
   z-index: 2;
   width: fit-content;
   display: flex;
@@ -51,24 +60,23 @@
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
-.explore-video-card-kebab-menu > span {
+.liked-video-card-kebab-menu > span {
   padding: 0.8rem;
   color: var(--font-color);
 }
 
-.explore-video-card-kebab-menu > span:hover {
+.liked-video-card-kebab-menu > span:hover {
   background-color: var(--base-gray-color);
 }
 
-.explore-video-card-secondary {
+.liked-video-card-secondary {
   display: flex;
-  gap: 8px;
   align-items: center;
-  padding: 0 8px;
+  gap: 8px;
   color: var(--base-gray-color);
 }
 
-.explore-video-card-secondary-divider {
+.video-card-secondary-divider {
   font-size: 8px;
   color: var(--base-gray-color);
   cursor: pointer;

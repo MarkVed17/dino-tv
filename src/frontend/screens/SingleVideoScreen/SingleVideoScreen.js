@@ -5,7 +5,7 @@ import {
   VideoPlayer,
 } from "../../components";
 import { useParams } from "react-router-dom";
-import { getVideoByIdService } from "../../services/videos-services/getVideoByIdService";
+import { getVideoByIdService } from "../../services";
 import "./SingleVideoScreen.css";
 
 const SingleVideoScreen = () => {
@@ -17,7 +17,6 @@ const SingleVideoScreen = () => {
       const response = await getVideoByIdService(videoId);
       if (response !== undefined) {
         setVideo(response);
-        console.log(response);
       }
     })();
   }, [videoId]);
@@ -26,7 +25,7 @@ const SingleVideoScreen = () => {
     <div className="main-content">
       <div className="single-video-screen-content">
         {video && (
-          <div className="video-main-content">
+          <div>
             <VideoPlayer videoId={videoId} />
             <SingleVideoDetails video={video} />
           </div>

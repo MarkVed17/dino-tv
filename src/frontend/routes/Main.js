@@ -23,14 +23,7 @@ const Main = () => {
     <Routes>
       <Route path="/" element={<HomeScreen />} />
       <Route path="/explore/:videoId" element={<SingleVideoScreen />} />
-      <Route
-        path="/explore"
-        element={
-          <PrivateRoute>
-            <ExploreScreen />
-          </PrivateRoute>
-        }
-      />
+      <Route path="/explore" element={<ExploreScreen />} />
       <Route
         path="/search"
         element={

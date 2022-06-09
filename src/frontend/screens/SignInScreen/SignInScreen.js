@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AUTH_TOKEN, USERNAME } from "../../constants/authConstants";
 import { useAuth } from "../../contexts";
-import { signInService } from "../../services/auth-services/signInService";
+import { signInService } from "../../services";
 import "./SignInScreen.css";
 
 const SignInScreen = () => {
