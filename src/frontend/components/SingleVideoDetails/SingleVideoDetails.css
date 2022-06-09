@@ -35,7 +35,7 @@
 }
 
 .video-card-actions:hover {
-  background-color: var(--input-outline-color);
+  background-color: var(--icon-hover-color);
 }
 
 .video-description {
