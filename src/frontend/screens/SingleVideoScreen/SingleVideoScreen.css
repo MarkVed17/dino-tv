@@ -1,8 +1,5 @@
 .single-video-screen-content {
   display: flex;
   gap: 1rem;
-}
-
-.video-main-content {
-  padding: 0 1rem;
+  margin: 1rem;
 }
