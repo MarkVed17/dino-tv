@@ -17,6 +17,8 @@ const WatchLaterVideosProvider = ({ children }) => {
       const response = await getWatchLaterVideos(auth.token);
       if (response !== undefined) {
         setWatchLaterVideos(response);
+      } else {
+        setWatchLaterVideos([]);
       }
     })();
   }, [auth]);

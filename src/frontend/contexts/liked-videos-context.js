@@ -17,6 +17,8 @@ const LikedVideosProvider = ({ children }) => {
       const response = await getLikedVideosService(auth.token);
       if (response !== undefined) {
         setLikedVideos(response);
+      } else {
+        setLikedVideos([]);
       }
     })();
   }, [auth]);
