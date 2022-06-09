@@ -7,6 +7,10 @@
   cursor: pointer;
 }
 
+.explore-video-card:hover {
+  background-color: var(--card-hover-color);
+}
+
 .explore-video-card-thumbnail {
   width: 100%;
 }
@@ -23,6 +27,7 @@
   display: flex;
   gap: 8px;
   align-items: center;
+  padding: 0 8px;
 }
 
 .explore-video-card-primary-menu {
@@ -31,7 +36,7 @@
 }
 
 .explore-video-card-primary-menu:hover {
-  background-color: var(--input-outline-color);
+  background-color: var(--icon-hover-color);
 }
 
 .explore-video-card-kebab-menu {
@@ -58,8 +63,9 @@
 .explore-video-card-secondary {
   display: flex;
   gap: 8px;
-  color: var(--base-gray-color);
   align-items: center;
+  padding: 0 8px;
+  color: var(--base-gray-color);
 }
 
 .explore-video-card-secondary-divider {

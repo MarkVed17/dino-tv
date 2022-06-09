@@ -18,6 +18,8 @@
   --body-bg-color: #ffffff;
   --comp-container-color: #ebebeb;
   --input-outline-color: #b5b5b5;
+  --card-hover-color: #cfcfcf85;
+  --icon-hover-color: #cacaca;
 }
 
 .dark-mode {
@@ -26,6 +28,8 @@
   --body-bg-color: #101212;
   --comp-container-color: #1d1d1d;
   --input-outline-color: #222222;
+  --card-hover-color: #27272785;
+  --icon-hover-color: #383838;
 }
 
 .main-content {
