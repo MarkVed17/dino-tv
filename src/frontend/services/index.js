@@ -1,3 +1,10 @@
 export { signInService } from "./auth-services/signInService";
 export { signUpService } from "./auth-services/signUpService";
 export { getVideosService } from "./videos-services/getVideosService";
+export { getVideoByIdService } from "./videos-services/getVideoByIdService";
+export { getLikedVideosService } from "./like-video-services/getLikedVideosService";
+export { addToLikedVideos } from "./like-video-services/addToLikedVideos";
+export { removeFromLikedVideos } from "./like-video-services/removeFromLikedVideos";
+export { getWatchLaterVideos } from "./watchlater-video-services/getWatchLaterVideos";
+export { addToWatchLaterVideos } from "./watchlater-video-services/addToWatchLaterVideos";
+export { removeFromWatchLaterVideos } from "./watchlater-video-services/removeFromWatchLaterVideos";
