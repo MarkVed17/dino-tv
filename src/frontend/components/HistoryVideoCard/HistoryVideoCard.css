@@ -1,0 +1,83 @@
+.history-video-card {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.history-video-card:hover {
+  background-color: var(--card-hover-color);
+}
+
+.history-video-card-thumbnail {
+  width: 25%;
+  height: 100%;
+}
+
+.history-video-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--font-color);
+  width: 100%;
+}
+
+.history-video-card-title {
+  color: var(--font-color);
+  font-weight: 600;
+  font-size: 1.1rem;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.history-video-card-primary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.history-video-card-primary-menu {
+  border-radius: 50%;
+  font-size: 1.75rem;
+  height: fit-content;
+}
+
+.history-video-card-primary-menu:hover {
+  background-color: var(--icon-hover-color);
+  cursor: pointer;
+}
+
+.history-video-card-kebab-menu {
+  position: absolute;
+  left: 33rem;
+  top: 2rem;
+  z-index: 2;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--comp-container-color);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.history-video-card-kebab-menu > span {
+  padding: 0.8rem;
+  color: var(--font-color);
+}
+
+.history-video-card-kebab-menu > span:hover {
+  background-color: var(--base-gray-color);
+}
+
+.history-video-card-secondary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--base-gray-color);
+}
+
+.video-card-secondary-divider {
+  font-size: 8px;
+  color: var(--base-gray-color);
+  cursor: pointer;
+}

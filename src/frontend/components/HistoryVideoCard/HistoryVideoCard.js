@@ -3,18 +3,18 @@ import Moment from "react-moment";
 import { nFormatter } from "../../utils/nFormatter";
 import { useNavigate } from "react-router-dom";
 import { useAuth, useWatchLaterVideos, useHistory } from "../../contexts";
-import "./RecommendedVideoCard.css";
+import "./HistoryVideoCard.css";
 
-const RecommendedVideoCard = ({ video }) => {
+const HistoryVideoCard = ({ video }) => {
   const [kebabMenu, setKebabMenu] = useState(false);
   const navigate = useNavigate();
   const { auth } = useAuth();
   const { watchLaterVideos, addToWatchLaterHandler } = useWatchLaterVideos();
-  const { addToHistoryHandler } = useHistory();
+  const { addToHistoryHandler, removeFromHistoryHandler } = useHistory();
 
   return (
     <div
-      className="recommended-video-card"
+      className="history-video-card"
       onClick={() => {
         addToHistoryHandler(video);
         navigate(`/explore/${video._id}`);
@@ -24,14 +24,14 @@ const RecommendedVideoCard = ({ video }) => {
       <img
         src={`https://img.youtube.com/vi/${video._id}/maxresdefault.jpg`}
         alt={`${video.title}`}
-        className="recommended-video-card-thumbnail"
+        className="history-video-card-thumbnail"
       />
-      <div className="recommended-video-card-content">
-        <div className="recommended-video-card-primary">
-          <p className="recommended-video-card-title">{video.title}</p>
+      <div className="history-video-card-content">
+        <div className="history-video-card-primary">
+          <p className="history-video-card-title">{video.title}</p>
         </div>
 
-        <div className="recommended-video-card-secondary">
+        <div className="history-video-card-secondary">
           <span>{nFormatter(video.views, 1)} views</span>
           <span className="material-icons video-card-secondary-divider">
             fiber_manual_record
@@ -42,7 +42,7 @@ const RecommendedVideoCard = ({ video }) => {
         </div>
       </div>
       <span
-        className="material-icons recommended-video-card-primary-menu"
+        className="material-icons history-video-card-primary-menu"
         onClick={(e) => {
           e.stopPropagation();
           setKebabMenu((kebabMenu) => !kebabMenu);
@@ -51,7 +51,7 @@ const RecommendedVideoCard = ({ video }) => {
         more_vert
       </span>
       {kebabMenu && (
-        <div className="recommended-video-card-kebab-menu">
+        <div className="history-video-card-kebab-menu">
           {watchLaterVideos.find(
             (watchLaterVideo) => watchLaterVideo._id === video._id
           ) ? (
@@ -81,10 +81,19 @@ const RecommendedVideoCard = ({ video }) => {
             <span className="material-icons">playlist_play</span> Save to
             playlist
           </span>
+          <span
+            onClick={(e) => {
+              e.stopPropagation();
+              removeFromHistoryHandler(video._id);
+            }}
+          >
+            <span className="material-icons">delete</span>
+            Remove from history
+          </span>
         </div>
       )}
     </div>
   );
 };
 
-export { RecommendedVideoCard };
+export { HistoryVideoCard };

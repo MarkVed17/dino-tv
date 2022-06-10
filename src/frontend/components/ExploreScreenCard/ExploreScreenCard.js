@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExploreScreenCard.css";
 import Moment from "react-moment";
-import { useAuth, useWatchLaterVideos } from "../../contexts";
+import { useAuth, useWatchLaterVideos, useHistory } from "../../contexts";
 import { nFormatter } from "../../utils/nFormatter";
 import { useNavigate } from "react-router-dom";
 
@@ -11,11 +11,15 @@ const ExploreScreenCard = ({ video }) => {
   const navigate = useNavigate();
   const { auth } = useAuth();
   const { watchLaterVideos, addToWatchLaterHandler } = useWatchLaterVideos();
+  const { addToHistoryHandler } = useHistory();
 
   return (
     <div
       className="explore-video-card"
-      onClick={() => navigate(`/explore/${video._id}`)}
+      onClick={() => {
+        addToHistoryHandler(video);
+        navigate(`/explore/${video._id}`);
+      }}
     >
       <img
         src={`https://img.youtube.com/vi/${_id}/maxresdefault.jpg`}
