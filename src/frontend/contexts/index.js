@@ -9,3 +9,4 @@ export {
   useWatchLaterVideos,
 } from "./watchlater-videos-context";
 export { HistoryProvider, useHistory } from "./history-context";
+export { PlaylistProvider, usePlaylists } from "./playlists-context";
