@@ -12,6 +12,7 @@ import {
   LikedVideosProvider,
   WatchLaterVideosProvider,
   HistoryProvider,
+  PlaylistProvider,
 } from "./frontend/contexts";
 // Call make Server
 makeServer();
@@ -24,13 +25,15 @@ ReactDOM.render(
           <VideosProvider>
             <FilterProvider>
               <HistoryProvider>
-                <WatchLaterVideosProvider>
-                  <LikedVideosProvider>
-                    <SidebarProvider>
-                      <App />
-                    </SidebarProvider>
-                  </LikedVideosProvider>
-                </WatchLaterVideosProvider>
+                <PlaylistProvider>
+                  <WatchLaterVideosProvider>
+                    <LikedVideosProvider>
+                      <SidebarProvider>
+                        <App />
+                      </SidebarProvider>
+                    </LikedVideosProvider>
+                  </WatchLaterVideosProvider>
+                </PlaylistProvider>
               </HistoryProvider>
             </FilterProvider>
           </VideosProvider>
