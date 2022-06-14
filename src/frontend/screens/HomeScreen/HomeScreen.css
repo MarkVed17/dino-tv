@@ -1,0 +1,41 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+.hero > .hero-tagline {
+  text-align: center;
+  margin: 0;
+  font-family: Jurassic Park;
+  font-size: 6rem;
+  font-weight: 600;
+  letter-spacing: 5px;
+  word-spacing: 1rem;
+  text-transform: lowercase;
+  color: var(--common-color);
+  background-image: linear-gradient(90deg, #ff4d4d, #f9c82b);
+}
+
+.hero-button {
+  color: var(--common-color);
+  background-color: var(--accent-color);
+  width: fit-content;
+  border: 1px solid var(--accent-color);
+  margin: auto;
+  text-decoration: none;
+  text-transform: lowercase;
+  font-family: Jurassic Park;
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 3.5px;
+  padding: 0.5rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.hero-button:hover {
+  background-color: transparent;
+  color: var(--font-color);
+  border: 1px solid var(--accent-color);
+}
