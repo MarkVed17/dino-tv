@@ -3,7 +3,6 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import {
   HomeScreen,
   ExploreScreen,
-  SearchScreen,
   LikedVideosScreen,
   WatchLaterScreen,
   PlaylistScreen,
@@ -25,14 +24,6 @@ const Main = () => {
       <Route path="/explore/:videoId" element={<SingleVideoScreen />} />
       <Route path="/explore" element={<ExploreScreen />} />
       <Route
-        path="/search"
-        element={
-          <PrivateRoute>
-            <SearchScreen />
-          </PrivateRoute>
-        }
-      />
-      <Route
         path="/liked"
         element={
           <PrivateRoute>
@@ -48,14 +39,7 @@ const Main = () => {
           </PrivateRoute>
         }
       />
-      <Route
-        path="/playlist"
-        element={
-          <PrivateRoute>
-            <PlaylistScreen />
-          </PrivateRoute>
-        }
-      />
+      <Route path="/playlists/:playlistId" element={<PlaylistScreen />} />
       <Route
         path="/history"
         element={
