@@ -13,3 +13,6 @@ export { RecommendedVideoCard } from "./RecommendedVideoCard/RecommendedVideoCar
 export { LikedVideoCard } from "./LikedVideoCard/LikedVideoCard";
 export { WatchLaterVideoCard } from "./WatchLaterVideoCard/WatchLaterVideoCard";
 export { HistoryVideoCard } from "./HistoryVideoCard/HistoryVideoCard";
+export { PlaylistVideoCard } from "./PlaylistVideoCard/PlaylistVideoCard";
+export { PlaylistModal } from "./PlaylistModal/PlaylistModal";
+export { DinosaursBanner } from "./DinosaursBanner/DinosaursBanner";

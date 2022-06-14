@@ -1,20 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { DinosaursBanner } from "../../components";
+import "./HomeScreen.css"
 
 const HomeScreen = () => {
   return (
-    <div
-      style={{
-        color: "white",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-      className="main-content"
-    >
-      This is Home Screen
-      <NavLink to="/explore">Go to Explore</NavLink>
+    <div className="main-content">
+      <div className="hero">
+        <p className="hero-tagline">An Adventure Millions Of Years In The Making</p>
+        <DinosaursBanner />
+        <NavLink to="/explore" className="hero-button">Explore</NavLink>
+      </div>
     </div>
   );
 };

@@ -3,6 +3,7 @@ import Moment from "react-moment";
 import { nFormatter } from "../../utils/nFormatter";
 import { useNavigate } from "react-router-dom";
 import { useAuth, useWatchLaterVideos, useHistory } from "../../contexts";
+import { PlaylistModal } from "../../components";
 import "./RecommendedVideoCard.css";
 
 const RecommendedVideoCard = ({ video }) => {
@@ -11,6 +12,7 @@ const RecommendedVideoCard = ({ video }) => {
   const { auth } = useAuth();
   const { watchLaterVideos, addToWatchLaterHandler } = useWatchLaterVideos();
   const { addToHistoryHandler } = useHistory();
+  const [showPlaylistsModal, setShowPlaylistsModal] = useState(false);
 
   return (
     <div
@@ -77,11 +79,23 @@ const RecommendedVideoCard = ({ video }) => {
               later
             </span>
           )}
-          <span>
+          <span
+            onClick={(e) => {
+              e.stopPropagation();
+              setShowPlaylistsModal(true);
+              setKebabMenu(false);
+            }}
+          >
             <span className="material-icons">playlist_play</span> Save to
             playlist
           </span>
         </div>
+      )}
+      {showPlaylistsModal && (
+        <PlaylistModal
+          video={video}
+          closePlaylistsModal={() => setShowPlaylistsModal(false)}
+        />
       )}
     </div>
   );

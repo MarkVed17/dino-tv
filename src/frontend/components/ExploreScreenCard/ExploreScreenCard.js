@@ -4,10 +4,12 @@ import Moment from "react-moment";
 import { useAuth, useWatchLaterVideos, useHistory } from "../../contexts";
 import { nFormatter } from "../../utils/nFormatter";
 import { useNavigate } from "react-router-dom";
+import { PlaylistModal } from "../../components";
 
 const ExploreScreenCard = ({ video }) => {
   const { _id, title, views, uploadedAt } = video;
   const [kebabMenu, setKebabMenu] = useState(false);
+  const [showPlaylistsModal, setShowPlaylistsModal] = useState(false);
   const navigate = useNavigate();
   const { auth } = useAuth();
   const { watchLaterVideos, addToWatchLaterHandler } = useWatchLaterVideos();
@@ -64,7 +66,13 @@ const ExploreScreenCard = ({ video }) => {
                 Watch later
               </span>
             )}
-            <span>
+            <span
+              onClick={(e) => {
+                e.stopPropagation();
+                setShowPlaylistsModal(true);
+                setKebabMenu(false);
+              }}
+            >
               <span className="material-icons">playlist_play</span> Save to
               playlist
             </span>
@@ -81,6 +89,12 @@ const ExploreScreenCard = ({ video }) => {
           <Moment fromNow>{uploadedAt}</Moment>
         </span>
       </div>
+      {showPlaylistsModal && (
+        <PlaylistModal
+          video={video}
+          closePlaylistsModal={() => setShowPlaylistsModal(false)}
+        />
+      )}
     </div>
   );
 };

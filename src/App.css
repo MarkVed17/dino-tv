@@ -10,6 +10,8 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .light-mode {
@@ -20,6 +22,7 @@
   --input-outline-color: #b5b5b5;
   --card-hover-color: #cfcfcf85;
   --icon-hover-color: #cacaca;
+  --common-color: #101212;
 }
 
 .dark-mode {
@@ -30,6 +33,7 @@
   --input-outline-color: #222222;
   --card-hover-color: #27272785;
   --icon-hover-color: #383838;
+  --common-color: #101212;
 }
 
 .main-content {

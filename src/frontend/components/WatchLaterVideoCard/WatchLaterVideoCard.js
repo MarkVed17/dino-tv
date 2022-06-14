@@ -3,6 +3,7 @@ import Moment from "react-moment";
 import { nFormatter } from "../../utils/nFormatter";
 import { useNavigate } from "react-router-dom";
 import { useWatchLaterVideos, useHistory } from "../../contexts";
+import { PlaylistModal } from "../../components";
 import "./WatchLaterVideoCard.css";
 
 const WatchLaterVideoCard = ({ video }) => {
@@ -10,6 +11,7 @@ const WatchLaterVideoCard = ({ video }) => {
   const navigate = useNavigate();
   const { removeFromWatchLaterHandler } = useWatchLaterVideos();
   const { addToHistoryHandler } = useHistory();
+  const [showPlaylistsModal, setShowPlaylistsModal] = useState(false);
 
   return (
     <div
@@ -51,7 +53,13 @@ const WatchLaterVideoCard = ({ video }) => {
       </span>
       {kebabMenu && (
         <div className="watch-later-video-card-kebab-menu">
-          <span>
+          <span
+            onClick={(e) => {
+              e.stopPropagation();
+              setShowPlaylistsModal(true);
+              setKebabMenu(false);
+            }}
+          >
             <span className="material-icons">playlist_play</span> Save to
             playlist
           </span>
@@ -65,6 +73,12 @@ const WatchLaterVideoCard = ({ video }) => {
             Remove from Watch Later
           </span>
         </div>
+      )}
+      {showPlaylistsModal && (
+        <PlaylistModal
+          video={video}
+          closePlaylistsModal={() => setShowPlaylistsModal(false)}
+        />
       )}
     </div>
   );

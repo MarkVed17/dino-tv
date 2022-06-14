@@ -1,0 +1,168 @@
+/* Dinosaurs Banner */
+
+.home-screen-row {
+  height: 80vh;
+}
+
+.text-banner {
+  width: 100vw;
+  opacity: 0.8;
+}
+
+.dinosize-chart {
+  background-color: transparent;
+  position: relative;
+}
+
+.dinosize-chart .dinosize {
+  position: absolute;
+  bottom: 15%;
+}
+
+.dinosize-chart .dinosize img {
+  width: 100%;
+}
+
+.dinosize-chart .dinosize-on {
+  position: absolute;
+  transition: opacity 0.42s;
+}
+
+.dinosize-chart .dinosize.active-dino .dinosize-on {
+  transition: opacity 0.42s;
+}
+
+.dinosize-chart #map-image {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.dinosize-chart .ankylosaurus {
+  left: 0;
+  bottom: 15.65%;
+  width: calc(122% / 14.4);
+}
+
+.dinosize-chart .apatosaurus {
+  left: 43%;
+  bottom: 15.1%;
+  z-index: 6;
+  width: calc(507% / 14.4);
+}
+
+.dinosize-chart .baryonyx {
+  left: 71.6%;
+  bottom: 13.4%;
+  z-index: 3;
+  width: calc(336% / 14.4);
+}
+
+.dinosize-chart .dimorphodon {
+  bottom: auto;
+  top: 9.4%;
+  left: 72.1%;
+  width: calc(115% / 14.4);
+}
+
+.dinosize-chart .edmontosaurus {
+  left: 23.85%;
+  bottom: 14%;
+  z-index: 5;
+  width: calc(265% / 14.4);
+}
+
+.dinosize-chart .gallimimus {
+  left: 18.85%;
+  z-index: 4;
+  width: calc(215% / 14.4);
+}
+
+.dinosize-chart .indominus {
+  left: 38.65%;
+  bottom: 12.7%;
+  z-index: 6;
+  width: calc(440% / 14.4);
+}
+
+.dinosize-chart .metriacanthosaurus {
+  left: 0;
+  bottom: 14.1%;
+  z-index: 1;
+  width: calc(255% / 14.4);
+}
+
+.dinosize-chart .microceratus {
+  left: 91.95%;
+  bottom: 14%;
+  width: calc(117% / 14.4);
+}
+
+.dinosize-chart .mosasaur {
+  left: 48.1%;
+  bottom: 0;
+  width: calc(430% / 14.4);
+}
+
+.dinosize-chart .owen-grady {
+  bottom: 5%;
+  left: 43.2%;
+  z-index: 9;
+  width: calc(74% / 14.4);
+}
+
+.dinosize-chart .pachycephalosaurus {
+  left: 79%;
+  bottom: 14%;
+  z-index: 1;
+  width: calc(290% / 14.4);
+}
+
+.dinosize-chart .parasaurolophus {
+  left: 8.6%;
+  bottom: 18.8%;
+  z-index: 2;
+  width: calc(141% / 14.4);
+}
+
+.dinosize-chart .pteranodon {
+  left: 58.4%;
+  top: 7%;
+  bottom: auto;
+  width: calc(238% / 14.4);
+}
+
+.dinosize-chart .raptor {
+  left: 82.35%;
+  bottom: 17%;
+  z-index: 2;
+  width: calc(160% / 14.4);
+}
+
+.dinosize-chart .stegosaurus {
+  left: 12.75%;
+  bottom: 15.5%;
+  z-index: 3;
+  width: calc(273% / 14.4);
+}
+
+.dinosize-chart .suchomimus {
+  left: 63%;
+  bottom: 14.4%;
+  z-index: 5;
+  width: calc(233% / 14.4);
+}
+
+.dinosize-chart .tyrannosaurus-rex {
+  left: 31%;
+  bottom: 14.3%;
+  z-index: 8;
+  width: calc(240% / 14.4);
+}
+
+.dinosize-chart .triceratops {
+  left: 68.4%;
+  bottom: 14.7%;
+  z-index: 4;
+  width: calc(243% / 14.4);
+}

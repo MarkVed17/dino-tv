@@ -1,10 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { usePlaylists } from "../../contexts";
 import "./ExpandedSidebar.css";
 
 const ExpandedSidebar = () => {
   const linkStyle = ({ isActive }) =>
     isActive ? "expanded-sidebar-link active-link" : "expanded-sidebar-link";
+  const { playlists } = usePlaylists();
 
   return (
     <div className="expanded-sidebar">
@@ -13,13 +15,6 @@ const ExpandedSidebar = () => {
           home
         </span>
         <span className="sidebar-link-text">Home</span>
-      </NavLink>
-
-      <NavLink to="/search" className={linkStyle}>
-        <span className="material-icons-outlined expanded-sidebar-icon">
-          search
-        </span>
-        <span className="sidebar-link-text">Search</span>
       </NavLink>
 
       <NavLink to="/explore" className={linkStyle}>
@@ -62,15 +57,21 @@ const ExpandedSidebar = () => {
         <span className="sidebar-link-text">Liked Videos</span>
       </NavLink>
 
-      <NavLink to="/playlist" className={linkStyle}>
-        <span
-          title="Playlist"
-          className="material-icons-outlined expanded-sidebar-icon"
+      {playlists.map((playlist) => (
+        <NavLink
+          to={`/playlists/${playlist._id}`}
+          className={linkStyle}
+          key={playlist._id}
         >
-          playlist_play
-        </span>
-        <span className="sidebar-link-text">Playlists</span>
-      </NavLink>
+          <span
+            title={playlist.title}
+            className="material-icons-outlined expanded-sidebar-icon"
+          >
+            playlist_play
+          </span>
+          <span className="sidebar-link-text">{playlist.title}</span>
+        </NavLink>
+      ))}
     </div>
   );
 };
