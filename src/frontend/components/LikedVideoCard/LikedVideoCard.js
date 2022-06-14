@@ -8,6 +8,7 @@ import {
   useWatchLaterVideos,
   useHistory,
 } from "../../contexts";
+import { PlaylistModal } from "../../components";
 import "./LikedVideoCard.css";
 
 const LikedVideoCard = ({ video }) => {
@@ -17,6 +18,7 @@ const LikedVideoCard = ({ video }) => {
   const { unlikeVideoHandler } = useLikedVideos();
   const { watchLaterVideos, addToWatchLaterHandler } = useWatchLaterVideos();
   const { addToHistoryHandler } = useHistory();
+  const [showPlaylistsModal, setShowPlaylistsModal] = useState(false);
 
   return (
     <div
@@ -83,7 +85,13 @@ const LikedVideoCard = ({ video }) => {
               later
             </span>
           )}
-          <span>
+          <span
+            onClick={(e) => {
+              e.stopPropagation();
+              setShowPlaylistsModal(true);
+              setKebabMenu(false);
+            }}
+          >
             <span className="material-icons">playlist_play</span> Save to
             playlist
           </span>
@@ -97,6 +105,12 @@ const LikedVideoCard = ({ video }) => {
             Remove from Liked videos
           </span>
         </div>
+      )}
+      {showPlaylistsModal && (
+        <PlaylistModal
+          video={video}
+          closePlaylistsModal={() => setShowPlaylistsModal(false)}
+        />
       )}
     </div>
   );

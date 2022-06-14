@@ -1,10 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { usePlaylists } from "../../contexts";
 import "./ShrinkedSidebar.css";
 
 const ShrinkedSidebar = () => {
   const linkStyle = ({ isActive }) =>
     isActive ? "shrinked-sidebar-link active-link" : "shrinked-sidebar-link";
+  const { playlists } = usePlaylists();
 
   return (
     <div className="shrinked-sidebar">
@@ -14,15 +16,6 @@ const ShrinkedSidebar = () => {
           className="material-icons-outlined shrinked-sidebar-icon"
         >
           home
-        </span>
-      </NavLink>
-
-      <NavLink to="/search" className={linkStyle}>
-        <span
-          title="Search"
-          className="material-icons-outlined shrinked-sidebar-icon"
-        >
-          search
         </span>
       </NavLink>
 
@@ -62,14 +55,20 @@ const ShrinkedSidebar = () => {
         </span>
       </NavLink>
 
-      <NavLink to="/playlist" className={linkStyle}>
-        <span
-          title="Playlist"
-          className="material-icons-outlined shrinked-sidebar-icon"
+      {playlists.map((playlist) => (
+        <NavLink
+          to={`/playlists/${playlist._id}`}
+          className={linkStyle}
+          key={playlist._id}
         >
-          playlist_play
-        </span>
-      </NavLink>
+          <span
+            title={playlist.title}
+            className="material-icons-outlined shrinked-sidebar-icon"
+          >
+            playlist_play
+          </span>
+        </NavLink>
+      ))}
     </div>
   );
 };
