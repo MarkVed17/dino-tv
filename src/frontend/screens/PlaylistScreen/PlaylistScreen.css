@@ -1,0 +1,59 @@
+.playlist-videos-content {
+  display: flex;
+  gap: 2rem;
+  margin: 1rem;
+  width: 100%;
+}
+
+.playlist-video-banner {
+  position: relative;
+  width: 40%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.playlist-video-banner-img {
+  width: 100%;
+  height: fit-content;
+}
+
+.playlist-videos-banner-label {
+  position: absolute;
+  top: 13.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  background-color: var(--card-bg-color);
+}
+
+.playlist-videos-banner-icon {
+  color: var(--neutral-color);
+}
+
+.playlist-videos-banner-text {
+  padding: 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--neutral-color);
+}
+
+.clear-playlist-btn {
+  font-weight: 600;
+  width: fit-content;
+}
+
+.playlist-videos-list {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  gap: 8px;
+}
+
+.placeholder {
+  color: var(--font-color);
+}
