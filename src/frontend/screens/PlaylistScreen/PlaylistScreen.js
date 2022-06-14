@@ -20,7 +20,7 @@ const PlaylistScreen = () => {
         setPlaylist(response);
       }
     })();
-  }, [playlist, playlistId]);
+  }, [playlist, playlistId, auth]);
 
   const removePlaylistHandler = async () => {
     const removePlaylistResponse = await removePlaylistService(
