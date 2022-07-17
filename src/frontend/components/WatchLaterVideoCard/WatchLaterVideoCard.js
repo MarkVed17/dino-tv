@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Moment from "react-moment";
 import { nFormatter } from "../../utils/nFormatter";
 import { useNavigate } from "react-router-dom";
 import { useWatchLaterVideos, useHistory } from "../../contexts";
 import { PlaylistModal } from "../../components";
 import "./WatchLaterVideoCard.css";
+import { useOnClickOutside } from "../../hooks";
 
 const WatchLaterVideoCard = ({ video }) => {
   const [kebabMenu, setKebabMenu] = useState(false);
@@ -12,6 +13,8 @@ const WatchLaterVideoCard = ({ video }) => {
   const { removeFromWatchLaterHandler } = useWatchLaterVideos();
   const { addToHistoryHandler } = useHistory();
   const [showPlaylistsModal, setShowPlaylistsModal] = useState(false);
+  const ref = useRef();
+  useOnClickOutside(ref, () => setKebabMenu(false));
 
   return (
     <div
@@ -52,7 +55,7 @@ const WatchLaterVideoCard = ({ video }) => {
         more_vert
       </span>
       {kebabMenu && (
-        <div className="watch-later-video-card-kebab-menu">
+        <div ref={ref} className="watch-later-video-card-kebab-menu">
           <span
             onClick={(e) => {
               e.stopPropagation();

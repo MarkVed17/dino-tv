@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { AUTH_TOKEN, USERNAME } from "../../constants/authConstants";
 import { useAuth } from "../../contexts";
 import { useSidebar, useTheme } from "../../contexts";
+import { useOnClickOutside } from "../../hooks";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -23,6 +24,9 @@ const Navbar = () => {
       userName: null,
     }));
   };
+
+  const ref = useRef();
+  useOnClickOutside(ref, () => setDropDownMenu(false));
 
   return (
     <>
@@ -89,13 +93,13 @@ const Navbar = () => {
 
       {dropDownMenu &&
         (!auth.status ? (
-          <div className="dropDown">
+          <div ref={ref} className="dropDown">
             <NavLink
               to="/signin"
               className={({ isActive }) =>
                 isActive ? "header-link-active" : "header-link"
               }
-              onClick={() => setDropDownMenu(!dropDownMenu)}
+              onClick={() => setDropDownMenu(false)}
             >
               Sign-In
             </NavLink>
@@ -104,19 +108,22 @@ const Navbar = () => {
               className={({ isActive }) =>
                 isActive ? "header-link-active" : "header-link"
               }
-              onClick={() => setDropDownMenu(!dropDownMenu)}
+              onClick={() => setDropDownMenu(false)}
             >
               Sign-Up
             </NavLink>
           </div>
         ) : (
-          <div className="dropDown">
+          <div ref={ref} className="dropDown">
             <NavLink
               to="/signin"
               className={({ isActive }) =>
                 isActive ? "header-link-active" : "header-link"
               }
-              onClick={signOutHandler}
+              onClick={() => {
+                signOutHandler();
+                setDropDownMenu(false);
+              }}
             >
               Logout
             </NavLink>

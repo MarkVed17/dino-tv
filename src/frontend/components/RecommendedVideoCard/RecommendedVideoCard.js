@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Moment from "react-moment";
 import { nFormatter } from "../../utils/nFormatter";
 import { useNavigate } from "react-router-dom";
 import { useAuth, useWatchLaterVideos, useHistory } from "../../contexts";
 import { PlaylistModal } from "../../components";
 import "./RecommendedVideoCard.css";
+import { useOnClickOutside } from "../../hooks";
 
 const RecommendedVideoCard = ({ video }) => {
   const [kebabMenu, setKebabMenu] = useState(false);
@@ -13,6 +14,8 @@ const RecommendedVideoCard = ({ video }) => {
   const { watchLaterVideos, addToWatchLaterHandler } = useWatchLaterVideos();
   const { addToHistoryHandler } = useHistory();
   const [showPlaylistsModal, setShowPlaylistsModal] = useState(false);
+  const ref = useRef();
+  useOnClickOutside(ref, () => setKebabMenu(false));
 
   return (
     <div
@@ -53,7 +56,7 @@ const RecommendedVideoCard = ({ video }) => {
         more_vert
       </span>
       {kebabMenu && (
-        <div className="recommended-video-card-kebab-menu">
+        <div ref={ref} className="recommended-video-card-kebab-menu">
           {watchLaterVideos.find(
             (watchLaterVideo) => watchLaterVideo._id === video._id
           ) ? (

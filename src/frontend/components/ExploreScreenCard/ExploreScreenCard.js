@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./ExploreScreenCard.css";
 import Moment from "react-moment";
 import { useAuth, useWatchLaterVideos, useHistory } from "../../contexts";
 import { nFormatter } from "../../utils/nFormatter";
 import { useNavigate } from "react-router-dom";
 import { PlaylistModal } from "../../components";
+import { useOnClickOutside } from "../../hooks";
 
 const ExploreScreenCard = ({ video }) => {
   const { _id, title, views, uploadedAt } = video;
@@ -14,6 +15,8 @@ const ExploreScreenCard = ({ video }) => {
   const { auth } = useAuth();
   const { watchLaterVideos, addToWatchLaterHandler } = useWatchLaterVideos();
   const { addToHistoryHandler } = useHistory();
+  const ref = useRef();
+  useOnClickOutside(ref, () => setKebabMenu(false));
 
   return (
     <div
@@ -42,7 +45,7 @@ const ExploreScreenCard = ({ video }) => {
           </span>
         )}
         {kebabMenu && (
-          <div className="explore-video-card-kebab-menu">
+          <div ref={ref} className="explore-video-card-kebab-menu">
             {watchLaterVideos.find((video) => video._id === _id) ? (
               <span
                 onClick={(e) => {

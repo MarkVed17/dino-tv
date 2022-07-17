@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { usePlaylists, useAuth } from "../../contexts";
 import {
   addPlaylistService,
@@ -7,6 +7,7 @@ import {
 } from "../../services";
 import { SET_PLAYLIST, SET_PLAYLISTS } from "../../constants/playlistConstants";
 import "./PlaylistModal.css";
+import { useOnClickOutside } from "../../hooks";
 
 const PlaylistModal = ({ video, closePlaylistsModal }) => {
   const [showPlaylistModalForm, setShowPlaylistModalForm] = useState(false);
@@ -58,9 +59,21 @@ const PlaylistModal = ({ video, closePlaylistsModal }) => {
     }
   };
 
+  const ref = useRef();
+  useOnClickOutside(ref, () => setShowPlaylistModalForm(false));
+
   return (
-    <div className="playlist-modal" onClick={(e) => e.stopPropagation()}>
-      <div className="playlist-modal-container">
+    <div
+      className="playlist-modal"
+      onClick={() => {
+        // e.stopPropagation();
+        setShowPlaylistModalForm(false);
+      }}
+    >
+      <div
+        className="playlist-modal-container"
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="playlist-modal-header">
           <h2 className="playlist-modal-heading">Save to...</h2>
           <span

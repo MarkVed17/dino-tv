@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Moment from "react-moment";
 import { nFormatter } from "../../utils/nFormatter";
 import { useNavigate } from "react-router-dom";
@@ -12,6 +12,7 @@ import "./PlaylistVideoCard.css";
 import { removeVideoFromPlaylistService } from "../../services";
 import { SET_PLAYLIST } from "../../constants/playlistConstants";
 import { PlaylistModal } from "../../components";
+import { useOnClickOutside } from "../../hooks";
 
 const PlaylistVideoCard = ({ video, playlistId }) => {
   const [kebabMenu, setKebabMenu] = useState(false);
@@ -32,6 +33,9 @@ const PlaylistVideoCard = ({ video, playlistId }) => {
       });
     }
   };
+
+  const ref = useRef();
+  useOnClickOutside(ref, () => setKebabMenu(false));
 
   return (
     <div
@@ -72,7 +76,7 @@ const PlaylistVideoCard = ({ video, playlistId }) => {
         more_vert
       </span>
       {kebabMenu && (
-        <div className="playlist-video-card-kebab-menu">
+        <div ref={ref} className="playlist-video-card-kebab-menu">
           {watchLaterVideos.find(
             (watchLaterVideo) => watchLaterVideo._id === video._id
           ) ? (
