@@ -16,3 +16,4 @@ export { HistoryVideoCard } from "./HistoryVideoCard/HistoryVideoCard";
 export { PlaylistVideoCard } from "./PlaylistVideoCard/PlaylistVideoCard";
 export { PlaylistModal } from "./PlaylistModal/PlaylistModal";
 export { DinosaursBanner } from "./DinosaursBanner/DinosaursBanner";
+export { ScrollToTop } from "./ScrollToTop/ScrollToTop";
