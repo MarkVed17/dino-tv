@@ -218,7 +218,7 @@ function DinosaursBanner() {
           src="/assets/banner/dinosaurs/all-dinos-trasnparent.png"
           id="map-image"
           alt="all-dinos-trasnparent"
-          usemap="#jurassic"
+          useMap="#jurassic"
         />
 
         <map name="jurassic">
