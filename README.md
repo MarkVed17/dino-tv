@@ -1,7 +1,7 @@
 
 # [Dino TV](https://dino-tv.netlify.app/) | Video-Library App for dinoheads 📝
 
-Steven Spielberg's phenomenally successful sci-fi adventure thriller is graced by state-of-the-art special effects & Dino TV is home to a enthralling collection of everything from Jurassic Park franchise. Featuring incredible special effects and action-packed drama, you'll surely enjoy Dino TV.
+Steven Spielberg's phenomenally successful sci-fi adventure thriller is graced by state-of-the-art special effects & Dino TV is home to a enthralling collection of everything from Jurassic Park franchise. Here you will find unforgettable moments, scenes and lines from all your favorite Jurassic Park films.
 
 ## Link
 
