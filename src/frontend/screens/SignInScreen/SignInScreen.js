@@ -93,8 +93,8 @@ const SignInScreen = () => {
           onClick={(e) => {
             e.preventDefault();
             signInHandler({
-              email: "adarshbalika@gmail.com",
-              password: "adarshBalika123",
+              email: "vedant@example.com",
+              password: "vedant123",
             });
           }}
         >
