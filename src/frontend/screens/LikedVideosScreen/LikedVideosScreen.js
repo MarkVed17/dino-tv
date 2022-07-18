@@ -19,7 +19,9 @@ const LikedVideosScreen = () => {
               className="liked-video-banner-img"
             />
             <div className="liked-videos-banner-label">
-              <span className="material-icons liked-videos-banner-icon">thumb_up</span>
+              <span className="material-icons liked-videos-banner-icon">
+                thumb_up
+              </span>
               <div className="liked-videos-banner-text">Liked Videos</div>
             </div>
           </div>
@@ -31,7 +33,10 @@ const LikedVideosScreen = () => {
           </div>
         </div>
       ) : (
-        <div className="placeholder">No Liked videos</div>
+        <div className="placeholder">
+          <h1>Nothing here!</h1>
+          <h3>Like any video to see something...</h3>
+        </div>
       )}
     </div>
   );

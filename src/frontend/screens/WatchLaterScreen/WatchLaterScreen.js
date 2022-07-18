@@ -22,18 +22,25 @@ const WatchLaterScreen = () => {
               <span className="material-icons watch-later-videos-banner-icon">
                 watch_later
               </span>
-              <div className="watch-later-videos-banner-text">Watch Later Videos</div>
+              <div className="watch-later-videos-banner-text">
+                Watch Later Videos
+              </div>
             </div>
           </div>
 
           <div className="watch-later-videos-list">
             {watchLaterVideos
-              .map((video) => <WatchLaterVideoCard key={video._id} video={video} />)
+              .map((video) => (
+                <WatchLaterVideoCard key={video._id} video={video} />
+              ))
               .reverse()}
           </div>
         </div>
       ) : (
-        <div className="placeholder">No Watch Later videos</div>
+        <div className="placeholder">
+          <h1>Nothing here!</h1>
+          <h3>Add any video to Watch later to see something...</h3>
+        </div>
       )}
     </div>
   );

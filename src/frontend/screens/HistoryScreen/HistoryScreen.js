@@ -41,7 +41,10 @@ const HistoryScreen = () => {
           </div>
         </div>
       ) : (
-        <div className="placeholder">No History</div>
+        <div className="placeholder">
+          <h1>Nothing here!</h1>
+          <h3>Watch any video to see something...</h3>
+        </div>
       )}
     </div>
   );

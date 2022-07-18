@@ -56,4 +56,5 @@
 
 .placeholder {
   color: var(--font-color);
+  padding: 1rem;
 }

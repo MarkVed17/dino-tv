@@ -82,7 +82,10 @@ const PlaylistScreen = () => {
           </div>
         </div>
       ) : (
-        <div className="placeholder">No Playlist</div>
+        <div className="placeholder">
+          <h1>Nothing here!</h1>
+          <h3>Add a playlist to see something...</h3>
+        </div>
       )}
     </div>
   );
