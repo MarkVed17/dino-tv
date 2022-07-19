@@ -40,7 +40,7 @@ https://user-images.githubusercontent.com/59828215/179460530-353a45e0-005b-4996-
 
 ## Tech Stack
 
-**Client:** React, React Router, React Moment, Context API, [Raptor UI](https://raptor-ui.netlify.app/)
+**Client:** React, React Router, React Moment, React PLayer, Context API, [Raptor UI](https://raptor-ui.netlify.app/)
 
 **Server:** Mockbee (Mock Backend)
 
